@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  Bootstrap CDN -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    
+    <title>Cadastro</title>
+    
+    <script>
+    function mascara(t, mask){
+    	 var i = t.value.length;
+    	 var saida = mask.substring(1,0);
+    	 var texto = mask.substring(i)
+    	 if (texto.substring(0,1) != saida){
+    	 t.value += texto.substring(0,1);
+    	 }
+   	}
+    </script>
+    
+</head>
+<body>
+	
+	<div class="container">
+		<h1>Cadastro de entrega</h1>
+		<form action="CadastroServlet" method="POST">
+			<div class="row">
+				<div class="col-md-6">
+					  <div class="form-group">
+					    <label for="nameUser">Nome</label>
+					    <input type="text" class="form-control" id="nameUser" name="name" placeholder="Digite seu nome" required="required">
+					  </div>
+				</div>
+			 </div>
+			 
+			  <div class="row">
+				<div class="col-md-6">
+					  <div class="form-group">
+					    <label for="AddressUser">Digite seu endereço</label>
+					    <input type="text" class="form-control" id="AddressUser" name="address" placeholder="Digite seu endereço" req>
+					  </div>
+				</div>
+			 </div>
+			 
+			 <div class="row">
+			 	<div class="col-md-6">
+				  <div class="form-group">
+					    <label for="select">Entrega</label>
+					    <select class="form-control" name="delivery" id="select" required="required">
+					      <option class="selected">---</option>
+					      <option>Entrega expressa</option>
+					      <option>Entrega com rastreio</option>
+					      <option>Entrega comum</option>
+					    </select>
+					 </div>
+				 </div>
+			   </div>
+			
+			  <div class="row">
+				<div class="col-md-6">
+					  <div class="form-group">
+					    <label for="cepUser">Digite seu CEP</label>
+					    <input type="text" class="form-control" id="cepUser" name="cep" onkeypress="mascara(this, '#####-###')" placeholder="Digite seu CEP" required="required" maxlength="9">
+					  </div>
+				</div>
+			 </div>
+			 
+			 <div class="row">
+				<div class="col-md-6">
+					 <div class="form-group">
+					    <label for="description">Descrição</label>
+					    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+					 </div>
+				</div>
+			 </div>
+			 <div class="row">
+				<div class="col-md-6">
+					 <div class="form-group">
+					    <label for="date">Data</label>
+					    <input class="form-control" type="text" onkeypress="mascara(this, '##/##/####')" id="description" name="date" maxlength="11"></input>
+					 </div>
+				</div>
+			 </div>
+				<button type="submit" class="btn btn-success">Confirmar</button>
+		</form>
+
+	</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
